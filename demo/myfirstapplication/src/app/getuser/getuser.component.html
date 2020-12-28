@@ -1,0 +1,26 @@
+
+<div >
+  <table class="table table-hover" >
+    <thead>
+      <tr>
+        <th scope="col">userName</th>
+        <th scope="col">user lastname</th>
+        <th scope="col">userEMail</th>
+        <th scope="col">userOrder</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr   *ngFor=" let  u of resultat">
+       <td>{{u.name}}</td>
+       <td>{{u.lastname}}</td>
+       <td>{{u.email}}</td>
+       <td *ngIf="u.order.length==0" >0 order</td>
+
+       <td  *ngIf="u.order" ><ul *ngFor="let o of u.order">{{o.description}}</ul></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+</div>

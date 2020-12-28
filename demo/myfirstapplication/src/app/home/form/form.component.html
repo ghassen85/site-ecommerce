@@ -1,0 +1,72 @@
+<div class="page-content">
+  <div class="holder mt-0">
+      <div class="container">
+          <ul class="breadcrumbs">
+              <li><a href="index.html">Home</a></li>
+              <li><span>Create account</span></li>
+          </ul>
+      </div>
+  </div>
+  <div class="holder mt-0">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-sm-8 col-md-6">
+                  <h2 class="text-center">CREATE AN ACCOUNT</h2>
+                  <div class="form-wrapper">
+                      <p>To access your whishlist, address book and contact preferences and to take advantage of our speedy checkout, create an account with us now.</p>
+                      <form [formGroup]="produitForm" (ngSubmit)="save()">
+                          <div class="form-group col">
+
+                            <label>Name</label>
+                            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                           <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                          <div *ngIf="f.name.errors.required">Name is required</div>
+                         </div>
+
+
+
+                                <label>Prix</label>
+                                <input type="text" formControlName="prix" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prix.errors }" />
+                                <div *ngIf="submitted && f.prix.errors" class="invalid-feedback">
+                                    <div *ngIf="f.prix.errors.required">Prix is required</div>
+                                </div>
+
+                                <label>Description</label>
+                                <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                    <div *ngIf="f.description.errors.required">Description is required</div>
+                                </div>
+                                <div class="row">
+
+                                  <div class="form-group  col-lg-6">
+                                    <label>image</label>
+                                    <input type="file" class="form-control item"
+                                           formControlName="image" (change)="uploadimage($event)"
+                                           [ngClass]="{ 'is-invalid': submitted && f.image.errors }" />
+                                    <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                                      <div *ngIf="f.image.errors.required">image est obligatoire</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                  <div class="row">
+                                    <div class="form-group  col-lg-6">
+
+                                  <label>soucollection</label>
+                                          <select  formControlName="souscollection" class="form-control item" [ngClass]="{ 'is-invalid': submitted && f.souscollection.errors }" >
+                                                            <div *ngIf="submitted && f.souscollection.errors" class="invalid-feedback">
+                                                              <div *ngIf="f.souscollection.errors.required">soucollection is required</div>
+                                                          </div>
+                                                          <option value={{a._id}}  *ngFor="let a of resultat2" >
+                                                              {{a.name}}
+
+                                                          </option>
+                                            </select>
+                                  </div>
+                                  </div>
+                                  <br>
+                                  <br>
+                          <div class="text-center" > <button type="submit" class="btn btn-primary mr-1"  >Register</button>
+                          </div>
+
+
+           </div></form></div></div></div></div></div></div>

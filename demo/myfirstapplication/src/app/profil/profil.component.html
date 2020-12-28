@@ -1,0 +1,58 @@
+<div class="page-content">
+
+  <div class="holder mt-0">
+      <div class="container">
+
+          <ul class="breadcrumbs">
+              <li><a href="index.html">Home</a></li>
+              <li><span>My account</span></li>
+          </ul>
+      </div>
+  </div>
+  <div class="holder mt-0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 aside aside--left">
+                  <div class="list-group"><img style="height: 300px;" src="http://localhost:4000/getfile/{{userjson.image}}"></div>
+              </div>
+              <div class="col-md-9 aside">
+                  <h2>Account Details</h2>
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <div class="card">
+                              <div class="card-body">
+                                  <h3>Personal Info</h3>
+                                  <p><b>First Name:</b> {{userjson.name}}<br><b>Last Name:</b> {{userjson.lastname}}<br><b>E-mail:</b> {{userjson.email}}<br><b>Phone:</b> 876-432-4323</p>
+                                  <div class="mt-2 clearfix"><a href="#" class="link-icn js-show-form" data-form="#updateDetails"><i class="icon-pencil"></i>Edit</a></div>
+                                  <button (click)='remove()'><a >logout</a></button>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card mt-3 d-none" id="updateDetails">
+                      <div class="card-body">
+                          <h3>Update Account Details</h3>
+                          <div class="row mt-2">
+                              <div class="col-sm-6"><label class="text-uppercase">First Name:</label>
+                                  <div class="form-group"><input type="text" class="form-control" placeholder="Jenny"></div>
+                              </div>
+                              <div class="col-sm-6"><label class="text-uppercase">Last Name:</label>
+                                  <div class="form-group"><input type="text" class="form-control" placeholder="Raider"></div>
+                              </div>
+                          </div>
+                          <div class="row mt-2">
+                              <div class="col-sm-6"><label class="text-uppercase">E-mail:</label>
+                                  <div class="form-group"><input type="email" class="form-control" placeholder="jennyraider@hotmail.com"></div>
+                              </div>
+                              <div class="col-sm-6"><label class="text-uppercase">Phone:</label>
+                                  <div class="form-group"><input type="text" class="form-control" placeholder="876-432-4323"></div>
+                              </div>
+                          </div>
+                          <div class="mt-2"><button type="reset" class="btn btn--alt js-close-form" data-form="#updateDetails">Cancel</button> <button type="submit" class="btn ml-1">Update</button></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

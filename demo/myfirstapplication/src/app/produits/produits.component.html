@@ -1,0 +1,123 @@
+
+<div class="col-md-12">
+  <div class="title-with-right">
+      <h2 class="h1-style">Recomended Products</h2>
+
+<br>
+<br>
+<br>
+
+      <div class='search-box' style="width: 300px ; margin-left: 20px; float: left">
+
+        <input class="form-control" name="search"
+               placeholder="Search"  [(ngModel)]="recherche" type="text">
+
+
+      </div>
+      <div class="prd-carousel-tabs js-filters-prd"><span class="filters-label active" data-filter=".prd">All</span> <span class="filters-label" data-filter=".prd-featured">Featured</span> <span class="filters-label" data-filter=".prd-sale">Sale</span> <span class="filters-label" data-filter=".prd-new">New</span></div>
+  </div>
+  <div class="prd-grid data-to-show-3 data-to-show-md-2 data-to-show-sm-2 data-to-show-xs-2 js-product-isotope prd-text-center prd-grid--sm-pad">
+      <div class="prd prd-has-loader prd prd-sale prd-has-countdown"   *ngFor='let s of resultat|produits:recherche| paginate: { itemsPerPage: 3, currentPage: p }'>
+
+        <div class="prd-inside">
+              <div ><a href="../home/details/{{s._id}}" class="prd-img"><img src='http://localhost:4000/getfile/{{s.image}}' alt="Headphones JBL" class="js-prd-img lazyload"></a>
+                  <div class="label-sale">-45%</div><a href="#" class="label-wishlist icon-heart js-label-wishlist"></a>
+<!--                   <ul class="list-options color-swatch prd-hidemobile">
+                      <li data-image="assets/images/products/product-30.jpg"><a href="#" class="js-color-toggle"><img src="assets/images/products/product-placeholder.png" data-srcset="assets/images/products/xsmall/product-30.jpg" class="lazyload" alt="Color Name"></a></li>
+                      <li data-image="assets/images/products/product-30-2.jpg"><a href="#" class="js-color-toggle"><img src="assets/images/products/product-placeholder.png" data-srcset="assets/images/products/xsmall/product-30-2.jpg" class="lazyload" alt="Color Name"></a></li>
+                  </ul> -->
+                  <div class="countdown-box">
+                      <div class="countdown js-countdown" data-countdown="2019/12/31"></div>
+                  </div>
+
+              </div>
+              <div class="prd-info">
+                  <div class="prd-tag prd-hidemobile"><a href="#"></a></div>
+                  <h2 class="prd-title"><a href="product.html"> {{s.name}}</a></h2>
+                  <button (click)="delete(s._id)"><i class ="far fa-fa-trash-alt">delete</i></button>
+                  <button ><i class ="far fa-fa-trash-alt" (click)="recupere(s.name,s.prix,s.description,s.image,s._id);openModal(template)">update</i></button>
+                  <div class="prd-rating prd-hidemobile"><i class="icon-star fill"></i><i class="icon-star fill"></i><i class="icon-star fill"></i><i class="icon-star fill"></i><i class="icon-star"></i></div>
+                  <div class="prd-price">
+                      <div class="price-new">$ 110.00</div>
+                      <div class="price-old">$ 200.00</div>
+                      <div class="price-comment">You save $ 90.00</div>
+                  </div>
+
+
+                  <div class="prd-hover">
+                    <div type="button" class="icon-eye prd-qview-link js-qview-link"></div>
+                    <br><br>
+                    <pre class="card card-block card-header">{{message}}</pre>
+                    <ng-template #template>
+                      <div class="modal-header">
+                        <h4 class="modal-title pull-left" id="my-modal-title">Update produit</h4></div>
+                      <div class="modal-body text-center">
+                        <div class="page-content">
+
+                          <div class="holder mt-0">
+                              <div class="container">
+                                  <div class="row justify-content-center">
+                                      <div class="col-sm-8 col-md-6">
+
+                                          <div class="form-wrapper">
+
+                                              <form [formGroup]="produitForm" (ngSubmit)="save()">
+
+                                                  <div class="form-group col">
+
+                                                      <label>Name</label>
+                                                      <input type="text" placeholder="{{s.name}}" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                                     <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.name.errors.required">Name is required</div>
+                                                   </div>
+
+
+
+                                                        <label>Prix</label>
+                                                        <input type="text" placeholder="{{s.prix}}" formControlName="prix" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prix.errors }" />
+                                                        <div *ngIf="submitted && f.prix.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.prix.errors.required">Prix is required</div>
+                                                        </div>
+
+                                                        <label>Description</label>
+                                                        <input type="text" placeholder="{{s.description}}" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                                                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.description.errors.required">Description is required</div>
+                                                        </div>
+
+                                                          <label>image</label>
+                                                          <img src='http://localhost:4000/getfile/{{s.image}}' >
+
+
+
+
+
+
+
+
+
+                                                  <div > <button  type="button" class="btn btn-primary" (click)="upadte()"  >Register</button>
+                                                   <button type="button" class="btn btn-primary" (click)="decline()" >close </button>
+                                                  </div>
+
+
+                                   </div></form></div></div></div></div></div></div>
+
+
+
+                      </div>
+                    </ng-template>
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <pagination-controls  style="float: right;" (pageChange)="p = $event"></pagination-controls>
+
+</div>

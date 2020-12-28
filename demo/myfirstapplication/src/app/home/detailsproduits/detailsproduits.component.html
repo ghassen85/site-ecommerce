@@ -1,0 +1,91 @@
+<div class="page-content">
+  <div class="holder mt-0">
+      <div class="container">
+          <ul class="breadcrumbs">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="category.html">Recommended products</a></li>
+              <li><span>{{details?.name}}</span></li>
+          </ul>
+      </div>
+  </div>
+  <div class="holder mt-0">
+      <div class="container" >
+          <div class="row prd-block prd-block--mobile-image-first js-prd-gallery" id="prdGallery100">
+              <div class="col-md-6 col-xl-5" >
+                  <div class="prd-block_info js-prd-m-holder mb-2 mb-md-0"></div><!-- Product Gallery -->
+                  <div class="prd-block_main-image main-image--slide js-main-image--slide">
+                      <div class="prd-block_main-image-holder js-main-image-zoom" data-zoomtype="inner">
+                          <div class="prd-block_main-image-video js-main-image-video"><video loop muted preload="metadata" controls="controls">
+                                  <source src="#"></video>
+                              <div class="gdw-loader"></div>
+                          </div>
+                          <div class="prd-has-loader">
+                              <div class="gdw-loader"></div><img src='http://localhost:4000/getfile/{{details?.image}}' class="zoom" alt="" data-zoom-image="images/products/large/product-01.jpg">
+                          </div>
+                          <div class="prd-block_main-image-next slick-next js-main-image-next">NEXT</div>
+                          <div class="prd-block_main-image-prev slick-prev js-main-image-prev">PREV</div>
+                      </div>
+                      <div class="prd-block_main-image-links"><a data-fancybox data-width="900" href="https://www.youtube.com/watch?v=Zk3kr7J_v3Q" class="prd-block_video-link"><i class="icon icon-play"></i></a> <a href="images/products/large/product-01.jpg" class="prd-block_zoom-link"><i class="icon icon-zoomin"></i></a></div>
+                  </div>
+                  <div class="product-previews-wrapper">
+                      <div class="product-previews-carousel" id="previewsGallery100"><a href="#" data-value="Silver" data-image="images/products/large/product-01.jpg" data-zoom-image="images/products/large/product-01.jpg"><img src="images/products/small/product-01.jpg" alt=""></a><a href="#" data-video="images/products/video/product.mp4"><img src="images/products/large/product-01.jpg" alt=""></a><a href="#" data-value="Silver" data-image="images/products/large/product-01-2.jpg" data-zoom-image="images/products/large/product-01-2.jpg"><img src="images/products/small/product-01-2.jpg" alt=""></a><a href="#" data-value="Silver" data-image="images/products/large/product-01-3.jpg" data-zoom-image="images/products/large/product-01-3.jpg"><img src="images/products/small/product-01-3.jpg" alt=""></a><a href="#" data-value="Silver" data-image="images/products/large/product-01-4.jpg" data-zoom-image="images/products/large/product-01-4.jpg"><img src="images/products/small/product-01-4.jpg" alt=""></a><a href="#" data-value="Gold" data-image="images/products/large/product-01-5.jpg" data-zoom-image="images/products/large/product-01-5.jpg"><img src="images/products/small/product-01-5.jpg" alt=""></a><a href="#" data-value="Gold" data-image="images/products/large/product-01-6.jpg" data-zoom-image="images/products/large/product-01-6.jpg"><img src="images/products/small/product-01-6.jpg" alt=""></a><a href="#" data-value="Gold" data-image="images/products/large/product-01-7.jpg" data-zoom-image="images/products/large/product-01-7.jpg"><img src="images/products/small/product-01-7.jpg" alt=""></a><a href="#" data-value="Gold" data-image="images/products/large/product-01-8.jpg" data-zoom-image="images/products/large/product-01-8.jpg"><img src="images/products/small/product-01-8.jpg" alt=""></a><a href="#" data-value="Dark Silver" data-image="images/products/large/product-01-9.jpg" data-zoom-image="images/products/large/product-01-9.jpg"><img src="images/products/small/product-01-9.jpg" alt=""></a></div>
+                  </div>
+                  <!-- /Product Gallery -->
+              </div>
+              <div class="col-md">
+                  <div class="prd-block_info">
+                      <div class="js-prd-d-holder prd-holder">
+                          <div class="prd-block_title-wrap">
+                              <h1 class="prd-block_title">{{details?.name}}</h1>
+                              <div class="prd-block__labels"><span class="prd-label--new">{{details?.souscollection?.name}}</span></div>
+                          </div>
+
+                          <div class="prd-block_description topline">
+                              <p>{{details?.description}}</p>
+                          </div>
+                      </div>
+                      <div class="prd-block_options topline">
+
+                          <div class="prd-size swatches"><span class="option-label">Size:</span>
+                              <div class="modal--simple modal--lg" id="sizeGuide" style="display: none;">
+
+                                  <div class="modal-content">
+                                      <div class="modal-body">
+                                          <div class="panel-group" id="sizeAccordion">
+                                             $
+                                              <div class="panel">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#sizeAccordion" href="#collapse5">Infant Size Conversions (0 – 12 months)</a></h4>
+                                                  </div>
+                                                  <div id="collapse5" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                          <div class="row">
+                                                              <div class="col-sm-3"><img src="images/pages/size-table.png" alt=""></div>
+
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
+                      <div class="prd-block_actions topline">
+                          <div class="prd-block_price"><span class="prd-block_price--actual">{{details.prix}}</span> </div>
+
+                      </div>
+
+                  </div>
+              </div>
+
+
+          </div>
+      </div>
+
+  </div>
+
+</div>

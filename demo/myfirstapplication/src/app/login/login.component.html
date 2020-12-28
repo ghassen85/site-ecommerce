@@ -1,0 +1,149 @@
+
+
+ <div class="body-preloader">
+
+    <div class="loader-wrap">
+
+        <div class="dots">
+
+            <div class="dot one"></div>
+
+            <div class="dot two"></div>
+
+            <div class="dot three"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="page-content">
+
+    <div class="holder mt-0">
+
+        <div class="container">
+
+            <ul class="breadcrumbs">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><span>Login</span></li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <div class="holder mt-0">
+
+        <div class="container">
+
+            <div class="row justify-content-around">
+
+                <div class="col-sm-6 col-md-4">
+
+                    <div id="loginForm">
+
+
+
+                        <h2 class="text-center">SIGN IN</h2>
+
+                        <div class="form-wrapper">
+
+                            <p>If you have an account with us, please log in.</p>
+
+                            <form #form="ngForm" (submit)="login1(form)">
+                              <div class="form-group ">
+                                    <label for=" ">Email *</label>
+                                    <input type="email" class="form-control"  placeholder="Entez votre email" name="Email1" [(ngModel)]="Email"
+                                        #Email1="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" >
+                                    <div *ngIf="Email1.invalid && (Email1.dirty || Email1.touched)" class="alert alert-danger">
+                                        <div *ngIf="Email1.errors?.required">
+                                            Email est requis.
+                                        </div>
+                                      <div *ngIf="Email1.errors?.pattern && Email1.touched">
+                                        Email est invalid
+                                      </div>
+                                    </div>
+                                </div>
+                              <div class="form-group ">
+                                    <label for=" ">Mot de passe *</label>
+                                    <input type="password"  class="form-control"
+                                           placeholder="Entez votre password" name="Password1"
+                                           [(ngModel)]="Password"
+                                        #Password1="ngModel" required>
+                                    <div *ngIf="Password1.invalid &&
+                                    (Password1.dirty || Password1.touched)" class="alert alert-danger">
+                                        <div *ngIf=" Password1.errors?.required ">
+                                            Mot de passe est requis.
+                                        </div>
+
+                                    </div>
+                                </div>
+                              <button href="./home" type="submit " class="btn btn-primary btn-sm mr-2"
+                                      [disabled]="form.invalid ">Login</button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div id="recoverPasswordForm" class="d-none">
+
+                        <h2 class="text-center">RESET YOUR PASSWORD</h2>
+
+                        <div class="form-wrapper">
+
+                            <p>We will send you an email to reset your password.</p>
+
+                            <form action="#">
+
+                                <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" ></div>
+
+                                <div class="form-group"><input type="password" class="form-control" placeholder="Password" ></div>
+
+                                <div class="btn-toolbar"><a href="#" class="btn btn--alt js-toggle-forms">Cancel</a> <button class="btn ml-1">Submit</button></div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-divider"></div>
+
+                <div class="col-sm-6 col-md-4 mt-3 mt-sm-0">
+
+                    <h2 class="text-center">REGISTER</h2>
+
+                    <div class="form-wrapper">
+
+                        <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p><a href="../createaccountuser" class="btn">create an account</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

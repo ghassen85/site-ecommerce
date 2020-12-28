@@ -1,0 +1,1723 @@
+{
+
+    "swagger": "2.0",
+
+    "info": {
+
+      "version": "1.0.0",
+
+      "title": "Yet Another Node.js Blogg Application API",
+
+      "description": "Yet Ahhhhhhhhhhhhnother Node.js Blogg Application API",
+
+      "license": {
+
+        "name": "MIT",
+
+        "url": "https://opensource.org/licenses/MIT"
+
+      }
+
+    },
+
+    "host": "localhost:4000",
+
+    "basePath": "",
+
+    "tags": [
+
+      {
+
+        "name": "Users",
+
+        "description": "API for users in the system"
+
+      }
+
+    ],
+
+    "schemes": [
+
+      "http"
+
+    ],
+
+    "consumes": [
+
+      "application/json"
+
+    ],
+
+    "produces": [
+
+      "application/json"
+
+    ],
+
+    "paths": {
+      "/cs/addC":{
+        "post": {
+    
+          "tags": [
+
+            "cs"
+
+          ],
+
+          "description": "upadte user",
+
+          "parameters": [
+
+            {
+
+              "name": "c",
+
+              "in": "body",
+
+              "description": "user that we want to upadte",
+
+              "schema": {
+
+                "$ref": "#/definitions/c"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitions/c"
+
+              }
+
+            }
+
+          }
+
+        }
+
+
+      },
+      "/cs/getAllC":{
+        "get": {
+
+          "tags": [
+
+            "cs"
+
+          ],
+
+          "summary": "Get all produits in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/c"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/cs/getOneC":{
+        "parameters": [
+  
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+
+        "get": {
+
+          "tags": [
+
+            "cs"
+
+          ],
+
+          "summary": "Get one users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/c"
+
+              }
+
+            }
+
+          }
+
+        }
+      },
+      "/scs/getOneUser/{id}":{
+        "parameters": [
+  
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+
+        "get": {
+
+          "tags": [
+
+            "scs"
+
+          ],
+
+          "summary": "Get one users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/sc"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/scs/getAll":{
+        "get": {
+
+          "tags": [
+
+            "scs"
+
+          ],
+
+          "summary": "Get all produits in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/sc"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/scs/addSc":{
+        "post": {
+    
+          "tags": [
+
+            "scs"
+
+          ],
+
+          "description": "upadte user",
+
+          "parameters": [
+
+            {
+
+              "name": "sc",
+
+              "in": "body",
+
+              "description": "user that we want to upadte",
+
+              "schema": {
+
+                "$ref": "#/definitions/sc"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitions/sc"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/orders/find/{id}":{
+        "parameters": [
+  
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+
+        "get": {
+
+          "tags": [
+
+            "orders"
+
+          ],
+
+          "summary": "Get one users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/Order"
+
+              }
+
+            }
+
+          }
+
+        }
+      },
+      "/orders/getOrder":{
+        "get": {
+
+          "tags": [
+
+            "orders"
+
+          ],
+
+          "summary": "Get all produits in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/Order"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/orders/addOrder":{
+        "post": {
+    
+          "tags": [
+
+            "orders"
+
+          ],
+
+          "description": "upadte user",
+
+          "parameters": [
+
+            {
+
+              "name": "Order",
+
+              "in": "body",
+
+              "description": "user that we want to upadte",
+
+              "schema": {
+
+                "$ref": "#/definitions/Order"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitions/Order"
+
+              }
+
+            }
+
+          }
+
+        }
+      },
+      "/produits/put/{id}":{
+        "parameters": [
+
+          {
+  
+            "name": "id",
+  
+            "in": "path",
+  
+            "required": true,
+  
+            "description": "ID of user that we want to find",
+  
+            "type": "string"
+  
+          }
+  
+        ],
+  
+      
+  
+      "put": {
+  
+        "summary": "Update user with give ID",
+  
+        "tags": [
+  
+          "produits"
+  
+        ],
+  
+        "parameters": [
+  
+          {
+  
+            "name": "produit",
+  
+            "in": "body",
+  
+            "description": "User with new values of properties",
+  
+            "schema": {
+  
+              "$ref": "#/definitions/produit"
+  
+            }
+  
+          }
+  
+        ],
+  
+        "responses": {
+  
+          "200": {
+  
+            "description": "User is updated",
+  
+            "schema": {
+  
+              "$ref": "#/definitions/produit"
+  
+            }
+  
+          }
+  
+        }
+  
+      }
+      },
+      "/produits/find/{id}":{
+        "parameters": [
+  
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+
+        "get": {
+
+          "tags": [
+
+            "produits"
+
+          ],
+
+          "summary": "Get one users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/produit"
+
+              }
+
+            }
+
+          }
+
+        }
+      },
+      "/produits/getproduit":{
+        
+        "get": {
+
+          "tags": [
+
+            "produits"
+
+          ],
+
+          "summary": "Get all produits in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/produit"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/produits/addProduit":{
+        "post": {
+    
+          "tags": [
+
+            "produits"
+
+          ],
+
+          "description": "upadte user",
+
+          "parameters": [
+
+            {
+
+              "name": "user",
+
+              "in": "body",
+
+              "description": "user that we want to upadte",
+
+              "schema": {
+
+                "$ref": "#/definitions/produit"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitions/produit"
+
+              }
+
+            }
+
+          }
+
+        }
+
+
+      },
+      "/users/addUser": {
+
+        "post": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "description": "Create new user in system",
+
+          "parameters": [
+
+            {
+
+              "name": "user",
+
+              "in": "body",
+
+              "description": "User that we want to create",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": "New user is created",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          }
+
+        }
+
+       
+
+      },
+      "/users/addUserimage": {
+
+        "post": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "description": "Create new user in system",
+
+          "parameters": [
+
+         
+
+              {
+
+                "name": "name",
+    
+                "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+    
+              },
+    
+              {
+    
+                "name": "lastname",
+    
+                "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+    
+              },
+    
+              {
+    
+                "name": "email",
+    
+                "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+    
+              },
+    
+              {
+    
+                "name": "password",
+    
+                "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+    
+              },
+    
+              {
+    
+                "name": "image",
+    
+                "in":"formData",
+    
+                "required":true,
+    
+                "description":"image of user",
+    
+                "type":"file",
+    
+                "items":{
+    
+                  "name":"image",
+    
+                  "type":"file",
+    
+                  "in":"formData",
+    
+                  "required":true,
+    
+                  "description":"user that we want to update"
+    
+                }
+    
+              }
+            
+            
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": "New user is created",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          }
+
+        }
+
+       
+
+      },
+      "/users/login2": {
+
+        "post": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "description": "cherche  user in db",
+
+          "parameters": [
+
+            {
+
+              "name": "user",
+
+              "in": "body",
+
+              "description": "User that we want to seacher",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          }
+
+        }
+
+       
+
+      },
+      "/users/sendMail": {
+
+        "post": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "description": "envoi de mail",
+
+          "parameters": [
+
+            {
+
+              "name": "user",
+
+              "in": "body",
+
+              "description": "mail that we want to envoie",
+
+              "schema": {
+
+                "$ref": "#/definitionsmail/User"
+
+              }
+
+            }
+
+          ],
+
+          "produces": [
+
+            "application/json"
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": " user is trouver",
+
+              "schema": {
+
+                "$ref": "#/definitionsmail/User"
+
+              }
+
+            }
+
+          }
+
+        }
+
+       
+
+      },
+      "/users/addUpload":{
+     
+
+            "post": {
+    
+              "tags": [
+    
+                "Users"
+    
+              ],
+    
+              "description": "upadte user",
+    
+              "parameters": [
+    
+                {
+    
+                  "name": "user",
+    
+                  "in": "body",
+    
+                  "description": "user that we want to upadte",
+    
+                  "schema": {
+    
+                    "$ref": "#/definitions/User"
+    
+                  }
+    
+                },
+  
+                {
+      
+                  "name": "image",
+      
+                  "in": "path",
+      
+                  "required": true,
+      
+                  "description": "image of user that we want to find",
+      
+                  "type": "file"
+      
+                }
+    
+              ],
+    
+              "produces": [
+    
+                "application/json"
+    
+              ],
+    
+              "responses": {
+    
+                "200": {
+    
+                  "description": " user is trouver",
+    
+                  "schema": {
+    
+                    "$ref": "#/definitions/User"
+    
+                  }
+    
+                }
+    
+              }
+    
+            }
+    
+           
+    
+          
+      },
+      "/users/getAll": {
+
+        
+
+        "get": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "summary": "Get all users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/Users"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+      "/users/deleteUser/{id}": {
+
+        "parameters": [
+
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+          "delete": {
+
+        "summary": "Delete user with given ID",
+
+        "tags": [
+
+          "Users"
+
+        ],
+
+        "responses": {
+
+          "200": {
+
+            "description": "User is deleted",
+
+            "schema": {
+
+              "$ref": "#/definitions/User"
+
+            }
+
+          }
+
+        }
+
+      }},
+
+      "/users/getOneUser/{id}": {
+
+        "parameters": [
+  
+          {
+
+            "name": "id",
+
+            "in": "path",
+
+            "required": true,
+
+            "description": "ID of user that we want to find",
+
+            "type": "string"
+
+          }
+
+        ],
+
+        "get": {
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "summary": "Get one users in system",
+
+          "responses": {
+
+            "200": {
+
+              "description": "OK",
+
+              "schema": {
+
+                "$ref": "#/definitions/Users"
+
+              }
+
+            }
+
+          }
+
+        }}, 
+        "/users/updateUserbyid/{id}": {
+
+          "parameters": [
+  
+            {
+  
+              "name": "id",
+  
+              "in": "path",
+  
+              "required": true,
+  
+              "description": "ID of user that we want to find",
+  
+              "type": "string"
+  
+            }
+  
+          ],
+
+        
+
+        "put": {
+
+          "summary": "Update user with give ID",
+
+          "tags": [
+
+            "Users"
+
+          ],
+
+          "parameters": [
+
+            {
+
+              "name": "user",
+
+              "in": "body",
+
+              "description": "User with new values of properties",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          ],
+
+          "responses": {
+
+            "200": {
+
+              "description": "User is updated",
+
+              "schema": {
+
+                "$ref": "#/definitions/User"
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+      ,
+      "/users/push/{id}": {
+
+      "parameters": [
+
+        {
+
+          "name": "id",
+
+          "in": "path",
+
+          "required": true,
+
+          "description": "ID of user that we want to find",
+
+          "type": "string"
+
+        }
+
+      ],
+
+    
+
+    "put": {
+
+      "summary": "Update user with give ID",
+
+      "tags": [
+
+        "Users"
+
+      ],
+
+      "parameters": [
+
+        {
+
+          "name": "user",
+
+          "in": "body",
+
+          "description": "User with new values of properties",
+
+          "schema": {
+
+            "$ref": "#/definitionsimage/User"
+
+          }
+
+        }
+
+      ],
+
+      "responses": {
+
+        "200": {
+
+          "description": "User is updated",
+
+          "schema": {
+
+            "$ref": "#/definitionsimage/User"
+
+          }
+
+        }
+
+      }
+
+    }
+
+  },
+  "/users/delete/{id}": {
+
+    "parameters": [
+
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+
+  
+
+  "put": {
+
+    "summary": "Update user with give ID",
+
+    "tags": [
+
+      "Users"
+
+    ],
+
+    "parameters": [
+
+      {
+
+        "name": "user",
+
+        "in": "body",
+
+        "description": "User with new values of properties",
+
+        "schema": {
+
+          "$ref": "#/definitionsimage/User"
+
+        }
+
+      }
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "User is updated",
+
+        "schema": {
+
+          "$ref": "#/definitionsimage/User"
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+    },
+    "definitionsimage": {
+
+      "User": {
+
+        "required": [
+
+          "email",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+         
+
+          "email": {
+
+            "type": "string",
+
+            "uniqueItems": true
+
+          },
+
+          "lastName": {
+
+            "type": "string"
+
+          },
+
+          "firstName": {
+
+            "type": "string"
+
+          },"image": {
+
+            "type": "string",
+            "format":"binary" 
+
+
+          },
+          "password": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "Users": {
+
+        "type": "array",
+
+        "$ref": "#/definitionsimage/User"
+
+      }
+
+    },
+
+    "definitions": {
+
+      "User": {
+
+        "required": [
+
+          "email",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+        
+
+          "email": {
+
+            "type": "string",
+
+            "uniqueItems": true
+
+          },
+
+          "lastname": {
+
+            "type": "string"
+          
+
+
+          },
+
+          "name": {
+
+            "type": "string"
+          
+
+
+          },"password": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "Users": {
+
+        "type": "array",
+
+        "$ref": "#/definitions/User"
+
+      },
+       "produit": {
+
+        "required": [
+
+          "name",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+        
+
+          
+
+          "prix": {
+
+            "type": "string"
+          
+
+
+          },
+
+          "name": {
+
+            "type": "string"
+          
+
+
+          },"description": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "Produits": {
+
+        "type": "array",
+
+        "$ref": "#/definitions/produit"
+
+      },"order": {
+
+        "required": [
+
+          "name",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+
+          "name": {
+
+            "type": "string"
+          
+
+
+          },"description": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "ordres": {
+
+        "type": "array",
+
+        "$ref": "#/definitions/Order"
+
+      }
+
+    ,"sc": {
+
+        "required": [
+
+          "name",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+
+          "name": {
+
+            "type": "string"
+          
+
+
+          },"description": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "scs": {
+
+        "type": "array",
+
+        "$ref": "#/definitions/sc"
+
+      },"c": {
+
+        "required": [
+
+          "name",
+
+          "_id"
+
+        ],
+
+        "properties": {
+
+
+          "name": {
+
+            "type": "string"
+          
+
+
+          },"description": {
+
+            "type": "string",
+            "uniqueItems": true
+
+
+          }
+
+        }
+
+      },
+
+      "cs": {
+
+        "type": "array",
+
+        "$ref": "#/definitions/c"
+
+      }
+      
+    },
+    "definitionsmail": {
+
+        "User": {
+  
+          "required": [
+  
+            "email",
+  
+            "_id"
+  
+          ],
+  
+          "properties": {
+  
+          
+  
+            "from": {
+  
+              "type": "string",
+  
+              "uniqueItems": true
+  
+            },
+  
+            "to": {
+  
+              "type": "string"
+  
+            }
+          
+  
+        ,"subject":{
+            "type": "string"
+
+        },"text":{
+            "type": "string"
+        }
+
+        }},
+  
+        "Users": {
+  
+          "type": "array",
+  
+          "$ref": "#/definitions1/User"
+  
+        }
+  
+      }
+  
+
+  }
